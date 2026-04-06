@@ -125,7 +125,7 @@ def ask_question():
         index = faiss.read_index(INDEX_FILE)
 
         # ---- Search top-k ----
-        distances, indices = index.search(query_vec, k=3)
+        distances, indices = index.search(query_vec, k=6)
 
         # ---- Clean context ----
         relevant_chunks = [
@@ -138,7 +138,7 @@ def ask_question():
         relevant_chunks = list(dict.fromkeys(relevant_chunks))
 
         # Limit context
-        context = "\n\n".join(relevant_chunks[:3])
+        context = "\n\n".join(relevant_chunks[:6])
 
         # ---- LLM CALL ----
         completion = client.chat.completions.create(

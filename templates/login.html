@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | DocuMind AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white flex items-center justify-center min-h-screen">
+    
+    <div class="bg-slate-900 p-10 rounded-2xl border border-slate-800 shadow-xl w-full max-w-md">
+        <h2 class="text-3xl font-bold mb-6 text-center">Welcome Back</h2>
+        
+        <button id="google-login" class="w-full flex items-center justify-center gap-3 bg-white text-black py-3 rounded-lg font-bold hover:bg-gray-200 transition mb-6">
+            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="20" alt="Google Logo">
+            Sign in with Google
+        </button>
+
+        <div class="relative mb-6">
+            <div class="absolute inset-0 flex items-center">
+                <span class="w-full border-t border-slate-700"></span>
+            </div>
+            <div class="relative flex justify-center text-xs uppercase">
+                <span class="bg-slate-900 px-2 text-slate-400">Or continue with email</span>
+            </div>
+        </div>
+
+        <form id="login-form" class="space-y-4">
+            <input type="email" id="email" placeholder="Email Address" required
+                class="w-full bg-slate-800 border border-slate-700 p-3 rounded-lg focus:outline-none focus:border-blue-500">
+            <input type="password" id="password" placeholder="Password" required
+                class="w-full bg-slate-800 border border-slate-700 p-3 rounded-lg focus:outline-none focus:border-blue-500">
+            <button type="submit" class="w-full bg-blue-600 py-3 rounded-lg font-bold hover:bg-blue-700 transition">
+                Sign In
+            </button>
+        </form>
+        <p class="mt-6 text-center text-sm text-slate-400">
+    Don't have an account? <a href="/signup" class="text-blue-500 hover:underline">Create Account</a>
+</p>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    
+    <script src="/static/js/auth.js"></script>
+</body>
+</html>

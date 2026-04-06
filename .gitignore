@@ -1,0 +1,21 @@
+# Environment variables — NEVER commit these
+.env
+*.env
+
+# FAISS index (large binary, regenerated at runtime)
+docs.index
+
+# Uploaded files
+uploads/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# OS files
+.DS_Store
+Thumbs.db

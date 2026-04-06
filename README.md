@@ -1,6 +1,6 @@
 # DocuMind AI — RAG Document Intelligence System
 
-> Upload your PDFs and chat with them instantly. Powered by Groq Llama-3, FAISS vector search, and Firebase Authentication.
+> Upload your PDFs and chat with them instantly. Powered by **Groq Llama-3**, **FAISS vector search**, and **Firebase Authentication**.
 
 ---
 
@@ -12,13 +12,14 @@ DocuMind AI lets you upload any PDF document and ask questions about it in plain
 
 ## Tech Stack
 
-
-Backend -  Python, Flask 
-LLM - Groq API (Llama-3.1-8b-instant) 
-Embeddings - Sentence Transformers (`all-MiniLM-L6-v2`) 
-Vector Search - FAISS 
-Authentication - Firebase (Email/Password + Google Sign-In) 
-Frontend - HTML, Tailwind CSS
+| Layer | Technology |
+|---|---|
+| Backend | Python, Flask |
+| LLM | Groq API (Llama-3.1-8b-instant) |
+| Embeddings | Sentence Transformers (`all-MiniLM-L6-v2`) |
+| Vector Search | FAISS |
+| Authentication | Firebase (Email/Password + Google Sign-In) |
+| Frontend | HTML, Tailwind CSS, Vanilla JS |
 
 ---
 
@@ -27,7 +28,7 @@ Frontend - HTML, Tailwind CSS
 ```
 Upload PDF → Extract Text → Chunk → Embed → FAISS Index
                                                   ↓
-     Answer ← Groq Llama-3 ← Top-K Chunks ← Query Embed
+              Answer ← Groq Llama-3 ← Top-K Chunks ← Query Embed
 ```
 
 1. **Upload** — PDF is parsed and text is extracted
@@ -67,7 +68,7 @@ RAG Project/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/DocuMind AI — RAG — Project.git
+git clone https://github.com/AshishSharma-123/DocuMind-AI-RAG-Project.git
 
 ```
 
@@ -116,8 +117,9 @@ Open your browser at `http://localhost:5000`
 
 ## Environment Variables
 
-
-`GROQ_API_KEY`  Your Groq API key from console.groq.com 
+| Variable | Description |
+|---|---|
+| `GROQ_API_KEY` | Your Groq API key from console.groq.com |
 
 
 ---

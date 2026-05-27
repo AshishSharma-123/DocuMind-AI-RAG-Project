@@ -124,6 +124,37 @@ Open your browser at `http://localhost:5000`
 
 ---
 
+🚀 How to Use
+
+Sign Up / Log In — Create an account or use Google Sign-In
+Upload a PDF — Click the paperclip icon in the chat input and select a PDF file
+Wait for indexing — The system extracts text, chunks it, and builds the FAISS index
+Ask questions — Type any question about the document and press Enter or click Send
+Get answers — The AI retrieves the top relevant chunks and generates a precise answer
+---
+🔄 How RAG Works (Under the Hood)
+┌─────────────────────────────────────────────────────────────┐
+│                        INDEXING PHASE                        │
+│                                                              │
+│  PDF Upload → PyPDF2 text extract → LangChain chunking       │
+│  (1000 chars, 200 overlap) → Sentence Transformer embeds     │
+│  → FAISS IndexFlatL2 → saved to docs.index                  │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│                       QUERY PHASE                            │
+│                                                              │
+│  User Query → Sentence Transformer embed → FAISS top-6      │
+│  search → deduplicate chunks → build context string          │
+│  → Groq Llama-3.1-8b-instant → structured answer            │
+└─────────────────────────────────────────────────────────────┘
+Key parameters:
+
+Chunk size: 1000 characters with 200 character overlap
+Top-K retrieval: 6 most similar chunks per query
+LLM temperature: 0.0 (deterministic, factual answers)
+Embedding model: all-MiniLM-L6-v2 (384-dimensional vectors)
+---
 
 ## License
 
